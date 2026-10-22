@@ -1,6 +1,6 @@
 # Milestone 1 – בסיס אפליקציה ושני מסכים מעוצבים
 
-> סטטוס: **בתכנון / בבנייה**. מקורות: `spec/MILESTONES.md` §Milestone 1, `spec/DESIGN.md`, `spec/ARCHITECTURE.md`, ההחלטות ב-`CLAUDE.md`.
+> סטטוס: **הושלם** – ממתין לאישור המשתמש לפני מיילסטון 2. מקורות: `spec/MILESTONES.md` §Milestone 1, `spec/DESIGN.md`, `spec/ARCHITECTURE.md`, ההחלטות ב-`CLAUDE.md`.
 
 ## מטרה
 
@@ -87,6 +87,6 @@ src/
 
 ## פריסה
 
-- [ ] קומיט ודחיפה ל-`main`
-- [ ] ה-Workflow (typecheck → test → build → deploy) עבר
-- [ ] הלינק החי מציג את האפליקציה: https://eyalg1980.github.io/simon-no-skill/
+- [x] קומיט `ea77876` נדחף ל-`main` (22.10.2026)
+- [x] ה-Workflow (npm ci → typecheck → test → build → deploy) הסתיים ב-`success`
+- [x] הלינק החי https://eyalg1980.github.io/simon-no-skill/ מגיש את ה-Build החדש: `index.html` עם `lang="he" dir="rtl"`, וקובצי ה-JS, ה-CSS והגופן תחת `/simon-no-skill/assets/` מחזירים 200. (נבדק עם `curl`; הדף החי לא נפתח בדפדפן לבדיקה חזותית.)
