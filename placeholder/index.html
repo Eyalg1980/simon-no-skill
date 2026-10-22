@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>סיימון</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0A1628;
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+    .board {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: #0F0F0F;
+      padding: 8px;
+      direction: ltr;
+    }
+    .board span:nth-child(1) { background: #00D26A; border-top-left-radius: 100%; }
+    .board span:nth-child(2) { background: #FF3B30; border-top-right-radius: 100%; }
+    .board span:nth-child(3) { background: #FFD600; border-bottom-left-radius: 100%; }
+    .board span:nth-child(4) { background: #00A3FF; border-bottom-right-radius: 100%; }
+    h1 { font-size: 32px; margin: 0 0 8px; }
+    p { font-size: 16px; color: #E5E5E5; margin: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="board" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <h1>סיימון</h1>
+    <p>המשחק בבנייה – בקרוב כאן.</p>
+  </main>
+</body>
+</html>
