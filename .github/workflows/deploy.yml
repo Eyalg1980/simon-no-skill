@@ -1,5 +1,5 @@
-# Temporary until Milestone 1: publishes placeholder/. Milestone 1 replaces this
-# with the full pipeline (npm ci → typecheck → test → build → deploy dist/).
+# Full pipeline (ARCHITECTURE §2.9): npm ci → typecheck → test → build → deploy dist/.
+# A failing step stops the run, so a broken build is never published.
 name: Deploy to GitHub Pages
 
 on:
@@ -17,16 +17,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: placeholder
       - id: deployment
         uses: actions/deploy-pages@v4
